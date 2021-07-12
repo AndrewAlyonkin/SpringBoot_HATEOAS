@@ -1,4 +1,4 @@
-package edu.alenkin.springboot_hateoas_app;
+package edu.alenkin.springboot_hateoas_app.config;
 
 
 import lombok.extern.slf4j.Slf4j;

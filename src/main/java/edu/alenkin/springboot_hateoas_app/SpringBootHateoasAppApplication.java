@@ -18,6 +18,6 @@ public class SpringBootHateoasAppApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        repository.findAll().forEach(System.out::println);
+        repository.findByLastNameContainingIgnoreCase("alenkin").forEach(System.out::println);
     }
 }
