@@ -22,11 +22,12 @@ spring:
     rest:
       base-path: /api
       return-body-on-create: true
-  security:
-    user:
-      name: user
-      password: user
-      roles: ADMIN
+
+#  security:
+#    user:
+#      name: user
+#      password: user
+#      roles: ADMIN
 
 logging:
   level:
