@@ -1,5 +1,6 @@
 package edu.alenkin.springboot_hateoas_app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.data.util.ProxyUtils;
 import org.springframework.util.Assert;
@@ -29,6 +30,7 @@ public abstract class BaseEntity {
         return id;
     }
 
+    @JsonIgnore
     public boolean isNew() {
         return id == null;
     }
