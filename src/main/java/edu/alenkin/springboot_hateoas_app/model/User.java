@@ -28,11 +28,11 @@ public class User extends AbstractPersistable<Integer> {
     @Size(max = 120)
     private String email;
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     @Size(max = 120)
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     @Size(max = 120)
     private String lastName;
 
