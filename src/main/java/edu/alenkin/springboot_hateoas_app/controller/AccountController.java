@@ -34,10 +34,12 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
  * oxqq@ya.ru
  */
 @RestController
-@RequestMapping("/api/account")
+@RequestMapping(AccountController.URL)
 @AllArgsConstructor
 @Slf4j
 public class AccountController implements RepresentationModelProcessor<RepositoryLinksResource> {
+
+    static final String URL = "/api/account";
 
     private static final RepresentationModelAssemblerSupport<User, EntityModel<User>> ASSEMBLER =
             new RepresentationModelAssemblerSupport<>(AccountController.class, (Class<EntityModel<User>>) (Class<?>) EntityModel.class) {

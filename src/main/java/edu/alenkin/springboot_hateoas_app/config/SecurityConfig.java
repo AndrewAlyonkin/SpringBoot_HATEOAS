@@ -1,9 +1,11 @@
 package edu.alenkin.springboot_hateoas_app.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.alenkin.springboot_hateoas_app.model.AuthUser;
 import edu.alenkin.springboot_hateoas_app.model.Role;
 import edu.alenkin.springboot_hateoas_app.model.User;
 import edu.alenkin.springboot_hateoas_app.repository.UserRepository;
+import edu.alenkin.springboot_hateoas_app.utils.JsonUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.annotation.PostConstruct;
 import java.util.Optional;
 
 
@@ -35,6 +38,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public static final PasswordEncoder ENCODER = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
     private final UserRepository repository;
+
+    private final ObjectMapper objectMapper;
+
+    @PostConstruct
+    void setMapper() {
+        JsonUtil.setObjectMapper(objectMapper);
+    }
 
     @Bean
     public UserDetailsService userDetailsService(){
