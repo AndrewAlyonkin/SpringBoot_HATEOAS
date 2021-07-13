@@ -11,6 +11,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.EnumSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -51,6 +54,12 @@ public class User extends BaseEntity implements Serializable {
     @Column(name = "role")
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Role> roles;
+
+    public User(Integer id, String email, String firstName, String lastName, String password, Collection<Role> roles) {
+        this(email, firstName, lastName, password, EnumSet.copyOf(roles));
+        this.id = id;
+    }
+
 
     public Set<Role> getRoles() {
         return roles;
