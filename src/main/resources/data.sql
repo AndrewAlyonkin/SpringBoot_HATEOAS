@@ -1,8 +1,9 @@
 INSERT INTO users (EMAIL, FIRST_NAME, LAST_NAME, PASSWORD)
-VALUES ('afaltair@yandex.ru', 'Andrew', 'Alenkin', '{noop}admin'),
-       ('irklaser@yandex.ru', 'Noname', 'Unknown', '{noop}user');
+VALUES ('admin@gmail.ru', 'Noname', 'Unknown', '{noop}password'),
+       ('user@gmail.com', 'Andrew', 'Alenkin', '{noop}admin');
+
 
 INSERT INTO user_role (ROLE, USER_ID)
-VALUES ('ROLE_USER', 1),
-       ('ROLE_ADMIN', 1),
-       ('ROLE_USER', 2);
+VALUES ('USER', 1),
+       ('ADMIN', 2),
+       ('USER', 2);

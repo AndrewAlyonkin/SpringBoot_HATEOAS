@@ -12,8 +12,8 @@ import java.sql.SQLException;
  * @author Alenkin Andrew
  * oxqq@ya.ru
  */
-@Slf4j
 @Configuration
+@Slf4j
 public class AppConfig {
 
     @Bean(initMethod = "start", destroyMethod = "stop")
